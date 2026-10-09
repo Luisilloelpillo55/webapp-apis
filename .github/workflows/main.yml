@@ -18,12 +18,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+
+      - name: Crear carpetas necesarias
+        run: mkdir -p data backups
 
       - name: Instalar dependencias
         run: npm ci
 
       - name: Ejecutar pruebas y cobertura
+        env:
+          NODE_ENV: test
         run: npm run test:coverage
 
   docker:

@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 router.get('/health', (req,res)=>{
-  res.json({statusCode:200, data:{status:"ok", uptime: process.uptime()}});
+  res.json({statusCode:200, data:{status:"ok-2", uptime: process.uptime()}});
 });
 
 router.get('/stats', async (req,res)=>{
